@@ -69,6 +69,7 @@
       <groupId>com.github.v-play-games</groupId>
       <artifactId>bot.commands.all</artifactId>
       <version>${bot.framework.version}</version>
+      <type>pom</type>
     </dependency>
   </dependencies>
   <repositories>
