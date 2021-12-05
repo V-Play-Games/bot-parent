@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2021 Vaibhav Nargwani
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.github.v-play-games</groupId>
+    <artifactId>maven-deploy</artifactId>
+    <version>1.0.1</version>
+  </parent>
+  <properties>
+    <bot.runner.mainClass>net.vpg.bot.Driver</bot.runner.mainClass>
+    <bot.runner.name>BotRunner</bot.runner.name>
+    <project.build.id>bot-parent</project.build.id>
+    <bot.framework.version>0.0.1</bot.framework.version>
+  </properties>
+
+  <artifactId>bot-parent</artifactId>
+  <version>0.0.1</version>
+  <inceptionYear>2021</inceptionYear>
+  <packaging>pom</packaging>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>appassembler-maven-plugin</artifactId>
+        <version>2.1.0</version>
+        <configuration>
+          <assembleDirectory>target</assembleDirectory>
+          <programs>
+            <program>
+              <mainClass>${bot.runner.mainClass}</mainClass>
+              <name>${bot.runner.name}</name>
+            </program>
+          </programs>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>assemble</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <name>Bot Parent</name>
+  <description>Parent POM for a Bot Framework powered bot</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.github.v-play-games</groupId>
+      <artifactId>bot.commands.all</artifactId>
+      <version>${bot.framework.version}</version>
+    </dependency>
+  </dependencies>
+  <repositories>
+    <repository>
+      <id>snapshot-repo</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </repository>
+  </repositories>
+</project>
