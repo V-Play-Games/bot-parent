@@ -61,6 +61,7 @@
   </build>
   <name>Bot Parent</name>
   <description>Parent POM for a Bot Framework powered bot</description>
+  <url>http://github.com/V-Play-Games/bot-parent</url>
   <dependencies>
     <dependency>
       <groupId>com.github.v-play-games</groupId>
@@ -75,4 +76,9 @@
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </repository>
   </repositories>
+  <scm>
+    <connection>scm:git:git://github.com/V-Play-Games/bot-parent.git</connection>
+    <developerConnection>scm:git:ssh://github.com:V-Play-Games/bot-parent.git</developerConnection>
+    <url>https://github.com/V-Play-Games/bot-parent</url>
+  </scm>
 </project>
